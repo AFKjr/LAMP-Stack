@@ -1,6 +1,6 @@
 What is a LAMP STACk?
 
-A LAMP is a stack of open-source software used for hosting web applications. I wanted to create this repo for beginners and made it as simple as possilbe. It includes:
+A LAMP is a stack of open-source software used for hosting web applications. I wanted to create this repo for beginners and make it as simple as possible. It includes:
 
     Linux: The operating system.
     Apache: The web server.
@@ -12,7 +12,7 @@ In this project:
     Linux: Debian 12 as the OS (I repurposed an old Chromebook for this project).
     Apache: Serves the web application and routes requests.
     PHP: Processes user inputs and calls the Python script.
-    Python: Performs backend calculations for the loot drop probabilities from a loot drop calculator from my other project.
+    Python: I made a LAMP to perform backend calculations for a loot drop calculator I made in Python.
 
 LAMP Stack Setup
 
@@ -108,10 +108,6 @@ Why Use Python in a LAMP Stack?
     Flexibility: Python is well-suited for backend logic and calculations.
     Powerful Libraries: Python’s simplicity and extensive libraries make it ideal for tasks beyond simple web scripting.
     Bridge to PHP: Using shell_exec() in PHP allows seamless integration with Python for complex calculations.
-
-Author
-
-    AFK_Jr
 
 
 
