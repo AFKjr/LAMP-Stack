@@ -1,6 +1,6 @@
 What is a LAMP STACk?
 
-A LAMP is a stack of open-source software used for hosting web applications. It includes:
+A LAMP is a stack of open-source software used for hosting web applications. I wanted to create this repo for beginners and made it as simple as possilbe. It includes:
 
     Linux: The operating system.
     Apache: The web server.
