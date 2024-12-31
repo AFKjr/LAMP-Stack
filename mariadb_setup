@@ -1,0 +1,62 @@
+How to Set Up a MariaDB Server
+
+Install MariaDB:
+
+  sudo apt update
+
+  sudo apt install mariadb-server mariadb-client -y
+
+Once installed, start and enable the MariaDB service:
+
+  sudo systemctl start mariadb
+
+  sudo systemctl enable mariadb
+
+Secure the Installation:
+
+  sudo mysql_secure_installation
+
+You’ll be prompted to:
+
+    Set a root password.
+    Remove anonymous users.
+    Disallow remote root login.
+    Remove the test database.
+
+Answer “yes” to these prompts for maximum security.
+
+To confirm MariaDB is running, check its status:
+
+  sudo systemctl status mariadb
+
+Log in to MariaDB to test the installation:
+
+  sudo mariadb
+
+If the prompt changes to MariaDB [(none)]>, the installation was successful.
+
+Create a Database. Once logged into MariaDB, create a database with the following commands:
+
+  CREATE DATABASE my_database;
+  CREATE USER 'my_user'@'localhost' IDENTIFIED BY 'my_password';
+  GRANT ALL PRIVILEGES ON my_database.* TO 'my_user'@'localhost';
+  FLUSH PRIVILEGES;
+  EXIT;
+
+This creates a database named my_database and a user named my_user with full privileges (change the names if you want).
+
+Test Database Connectivity. To test the database connection, use the following command:
+
+  mysql -u my_user -p
+
+Enter the password you set for my_user. If successful, you’ll see the MariaDB prompt.
+
+Integrate MariaDB with PHP. Install the PHP extension for MariaDB:
+
+  sudo apt install php-mysql -y
+
+Restart Apache to apply the changes:
+
+  sudo systemctl restart apache2
+
+You should now be able to use PHP to connect to MariaDB and run database queries.
