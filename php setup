@@ -1,0 +1,55 @@
+Setting Up PHP
+
+PHP is a server-side scripting language used to create dynamic web pages. This guide explains how to install and configure PHP as part of your LAMP stack.
+
+Install PHP. Run the following command to install PHP and its dependencies:
+
+  sudo apt update
+  sudo apt install php libapache2-mod-php -y
+
+Verify PHP Installation. Create a PHP test file to ensure PHP is working:
+
+  echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
+
+Visit http://localhost/info.php in your browser. You should see the PHP info page, which displays details about your PHP installation.
+
+Install PHP Extensions. To extend PHP functionality, install additional modules as needed. For example, to connect PHP to MariaDB:
+
+  sudo apt install php-mysql -y
+
+After installing new modules, restart Apache to apply the changes:
+
+  sudo systemctl restart apache2
+
+Configure PHP. The main PHP configuration file is located at:
+
+  /etc/php/<version>/apache2/php.ini
+
+Open it for editing:
+
+  sudo nano /etc/php/<version>/apache2/php.ini
+
+Replace <version> with your installed PHP version (e.g., 8.2). Common settings to modify:
+
+    upload_max_filesize: Increase upload file size limit.
+    memory_limit: Increase memory allocation for scripts.
+    display_errors: Enable or disable error reporting.
+
+Restart Apache after making changes:
+
+  sudo systemctl restart apache2
+
+Secure PHP. For a production environment, ensure PHP is secure:
+
+    Disable unnecessary modules.
+    Turn off error display on live sites (display_errors = Off).
+    Regularly update PHP to the latest version:
+
+  sudo apt update
+  sudo apt upgrade -y
+
+Test a Dynamic PHP Script. Create a simple PHP script to confirm everything is working:
+
+  echo "<?php echo 'Hello, World!'; ?>" | sudo tee /var/www/html/hello.php
+
+Visit http://localhost/hello.php. You should see Hello, World! displayed on the page.
