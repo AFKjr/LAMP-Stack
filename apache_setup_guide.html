@@ -1,0 +1,32 @@
+Install Apache, the web server that serves your website files:
+
+sudo apt install apache2 -y
+
+After the installation, start and enable Apache to run on system boot:
+
+sudo systemctl start apache2
+sudo systemctl enable apache2
+
+To verify that Apache is working:
+
+sudo systemctl status apache2
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Finally, enable PHP support:
+
+Download the required modules:
+
+sudo apt install php libapache2-mod-php -y
+
+verify:
+
+echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
+
+Visit http://localhost/info.php
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Restart Apache
+
+sudo systemctl restart apache2
+
