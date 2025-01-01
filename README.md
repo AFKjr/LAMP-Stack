@@ -67,7 +67,7 @@ The project demonstrates how to use PHP as the bridge to execute Python scripts 
 
 Project Files:
 
-    sample_file.py: The Python script for loot drop calculations.
+    sample_file.py: The Python script.
     sample_file.php: The PHP frontend that calls the Python script.
 
 Both files are stored in the Apache web root directory:
